@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .utils.indexer import indexFile
+
 def index(request):
-    result = "Hello, world. You're at the polls index."
+    result = indexFile("file.txt")
     return HttpResponse(result)
