@@ -5,4 +5,6 @@ from .utils.indexer import indexFile
 
 def index(request):
     result = indexFile("file.txt")
-    return HttpResponse(result)
+    context = {'message': result}
+    return render(request, 'mysite/index.html', context)
+
